@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+
+		html {
+			font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+		}
+
+		.segment-control {
+
+			--background: #fefefe;
+			--border-color: #aaa;
+			--active-bg: #eaeaea;
+			--hover-bg: #fafafa;
+			--border-radius: 0.33rem;
+			--border-width: 1.5px;
+			--font-size: 0.8em;
+
+			display: flex;
+			& input {
+				display: none;
+			}
+
+			& label {
+				font-size: var(--font-size);
+				background: var(--background);
+				display: block;
+				padding: 0 4px;
+				border: var(--border-width) solid var(--border-color);
+				border-right: none;
+				flex-grow: 2;
+				text-align: center;
+				line-height: 2;
+				box-sizing: border-box;
+			}
+
+			& label:first-child {
+				border-radius: var(--border-radius) 0 0 var(--border-radius);
+			}
+
+			& label:last-child {
+				border-radius: 0 var(--border-radius) var(--border-radius) 0;
+				border-right: var(--border-width) solid var(--border-color);
+			}
+
+			& label:has(input:checked) {
+				font-weight: bold;
+				background: var(--active-bg);
+			}
+
+			& label:hover {
+				background: var(--hover-bg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<form>
+			<div class="segment-control">
+				<label>
+					<input type="radio" name="memory" value="8">
+					1
+				</label>
+				<label>
+					<input type="radio" name="memory" value="16">
+					16
+				</label>
+				<label>
+					<input type="radio" name="memory" value="32">
+					32
+				</label>
+				<label>
+					<input type="radio" name="memory" value="64">
+					64
+				</label>
+			</div>
+		</form>
+	</main>
+	<script type="text/javascript" src="../src/segment-control.js"></script>
+</body>
+</html>
